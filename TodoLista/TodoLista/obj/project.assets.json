@@ -3116,11 +3116,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Polaznik\\Documents\\github\\EdunovaWP1\\CSHARP\\TodoLista\\TodoLista\\TodoLista.csproj",
+      "projectUniqueName": "C:\\Users\\Polaznik\\Desktop\\vjezba-main\\TodoLista\\TodoLista\\TodoLista.csproj",
       "projectName": "TodoLista",
-      "projectPath": "C:\\Users\\Polaznik\\Documents\\github\\EdunovaWP1\\CSHARP\\TodoLista\\TodoLista\\TodoLista.csproj",
+      "projectPath": "C:\\Users\\Polaznik\\Desktop\\vjezba-main\\TodoLista\\TodoLista\\TodoLista.csproj",
       "packagesPath": "C:\\Users\\Polaznik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Polaznik\\Documents\\github\\EdunovaWP1\\CSHARP\\TodoLista\\TodoLista\\obj\\",
+      "outputPath": "C:\\Users\\Polaznik\\Desktop\\vjezba-main\\TodoLista\\TodoLista\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Polaznik\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3189,7 +3189,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -6,80 +6,77 @@
     <members>
         <member name="T:TodoLista.Controllers.KategorijaController">
             <summary>
-            Namijenjeno za CRUD operacije na entitetom smjer u bazi
+            Namijenjeno za CRUD operacije na entitetom kategorija u bazi
             </summary>
         </member>
         <member name="M:TodoLista.Controllers.KategorijaController.Get">
              <summary>
-             Dohvaća sve smjerove iz baze
+             Dohvaća sve kategorije iz baze
              </summary>
              <remarks>
              Primjer upita:
             
-                GET api/v1/Smjer
+                GET api/v1/Kategorija
             
              </remarks>
-             <returns>Smjerovi u bazi</returns>
+             <returns>Kategorije u bazi</returns>
              <response code="200">Sve je u redu</response>
              <response code="400">Zahtjev nije valjan (BadRequest)</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="M:TodoLista.Controllers.KategorijaController.Post(TodoLista.Models.Kategorija)">
              <summary>
-             Dodaje smjer u bazu
+             Dodaje kategoriju u bazu
              </summary>
              <remarks>
              Primjer upita:
             
-                POST api/v1/Smjer
-                {naziv:"",trajanje:100}
+                POST api/v1/Kategorija
+                {naziv:""}
             
              </remarks>
-             <returns>Kreirani smjer u bazi s svim podacima</returns>
+             <returns>Kreirana kategorija u bazi s svim podacima</returns>
              <response code="200">Sve je u redu</response>
              <response code="400">Zahtjev nije valjan (BadRequest)</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="M:TodoLista.Controllers.KategorijaController.Put(System.Int32,TodoLista.Models.Kategorija)">
              <summary>
-             Mijenja podatke postojećeg smjera u bazi
+             Mijenja podatke postojeće kategorije u bazi
              </summary>
              <remarks>
              Primjer upita:
             
-                PUT api/v1/smjer/1
+                PUT api/v1/kategorija/1
             
              {
               "sifra": 0,
               "naziv": "Novi naziv",
-              "trajanje": 120,
-              "cijena": 890.22,
-              "upisnina": 0,
-              "verificiran": true
+              
              }
             
              </remarks>
-             <param name="sifra">Šifra smjera koji se mijenja</param>  
-             <returns>Svi poslani podaci od smjera</returns>
+             <param name="sifra">Šifra kategorije koja se mijenja</param>  
+             <returns>Svi poslani podaci od kategorije</returns>
              <response code="200">Sve je u redu</response>
-             <response code="204">Nema u bazi smjera kojeg želimo promijeniti</response>
+             <response code="204">Nema u bazi kategorije koje želimo promijeniti</response>
              <response code="415">Nismo poslali JSON</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="M:TodoLista.Controllers.KategorijaController.Delete(System.Int32)">
              <summary>
-             Briše smjer iz baze
+             Briše kategoriju iz baze
              </summary>
              <remarks>
              Primjer upita:
             
-                DELETE api/v1/smjer/1
+                DELETE api/v1/kategorija/1
                 
              </remarks>
-             <param name="sifra">Šifra smjera koji se briše</param>  
+             <param name="sifra">Šifra kategorije koji se briše</param>  
              <returns>Odgovor da li je obrisano ili ne</returns>
              <response code="200">Sve je u redu</response>
-             <response code="204">Nema u bazi smjera kojeg želimo obrisati</response>
+             <response code="204">Nema u bazi kategorije koje želimo obrisati</response>
              <response code="415">Nismo poslali JSON</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
@@ -90,169 +87,168 @@
         </member>
         <member name="M:TodoLista.Controllers.KorisnikController.Get">
              <summary>
-             Dohvaća sve smjerove iz baze
+             Dohvaća sve korisnike iz baze
              </summary>
              <remarks>
              Primjer upita:
             
-                GET api/v1/Smjer
+                GET api/v1/Korisnik
             
              </remarks>
-             <returns>Smjerovi u bazi</returns>
+             <returns>Korisnik u bazi</returns>
              <response code="200">Sve je u redu</response>
              <response code="400">Zahtjev nije valjan (BadRequest)</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="M:TodoLista.Controllers.KorisnikController.Post(TodoLista.Models.Korisnik)">
              <summary>
-             Dodaje smjer u bazu
+             Dodaje korisnika u bazu
              </summary>
              <remarks>
              Primjer upita:
             
-                POST api/v1/Smjer
-                {naziv:"",trajanje:100}
+                POST api/v1/Korisnik
+                {ime:"",prezime:"",korisnicko ime:"",lozinka:}
             
              </remarks>
-             <returns>Kreirani smjer u bazi s svim podacima</returns>
+             <returns>Kreirani korisnik u bazi s svim podacima</returns>
              <response code="200">Sve je u redu</response>
              <response code="400">Zahtjev nije valjan (BadRequest)</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="M:TodoLista.Controllers.KorisnikController.Put(System.Int32,TodoLista.Models.Korisnik)">
              <summary>
-             Mijenja podatke postojećeg smjera u bazi
+             Mijenja podatke postojećeg korisnika u bazi
              </summary>
              <remarks>
              Primjer upita:
             
-                PUT api/v1/smjer/1
+                PUT api/v1/korisnik/1
             
              {
               "sifra": 0,
-              "naziv": "Novi naziv",
-              "trajanje": 120,
-              "cijena": 890.22,
-              "upisnina": 0,
-              "verificiran": true
+              "ime": "",
+              "prezime": "",
+              "korisnicko ime": "",
+              "lozinka": 0,
+              
              }
             
              </remarks>
-             <param name="sifra">Šifra smjera koji se mijenja</param>  
-             <returns>Svi poslani podaci od smjera</returns>
+             <param name="sifra">Šifra korisnika koji se mijenja</param>  
+             <returns>Svi poslani podaci od korisnika</returns>
              <response code="200">Sve je u redu</response>
-             <response code="204">Nema u bazi smjera kojeg želimo promijeniti</response>
+             <response code="204">Nema u bazi korisnika kojeg želimo promijeniti</response>
              <response code="415">Nismo poslali JSON</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="M:TodoLista.Controllers.KorisnikController.Delete(System.Int32)">
              <summary>
-             Briše smjer iz baze
+             Briše korisnika iz baze
              </summary>
              <remarks>
              Primjer upita:
             
-                DELETE api/v1/smjer/1
+                DELETE api/v1/korisnik/1
                 
              </remarks>
-             <param name="sifra">Šifra smjera koji se briše</param>  
+             <param name="sifra">Šifra korisnika koji se briše</param>  
              <returns>Odgovor da li je obrisano ili ne</returns>
              <response code="200">Sve je u redu</response>
-             <response code="204">Nema u bazi smjera kojeg želimo obrisati</response>
+             <response code="204">Nema u bazi korisnika kojeg želimo obrisati</response>
              <response code="415">Nismo poslali JSON</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="T:TodoLista.Controllers.TodoController">
             <summary>
-            Namijenjeno za CRUD operacije na entitetom polaznik u bazi
+            Namijenjeno za CRUD operacije na entitetu TodoLista u bazi
             </summary>
         </member>
         <member name="M:TodoLista.Controllers.TodoController.Get">
              <summary>
-             Dohvaća sve polaznike iz baze
+             Dohvaća sve TodoListe iz baze
              </summary>
              <remarks>
              Primjer upita:
             
-                GET api/v1/Polaznik
+                GET api/v1/TodoLista
             
              </remarks>
-             <returns>Polaznici u bazi</returns>
+             <returns>TodoLista u bazi</returns>
              <response code="200">Sve je u redu</response>
              <response code="400">Zahtjev nije valjan (BadRequest)</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="M:TodoLista.Controllers.TodoController.Post(TodoLista.Models.DTO.Todo_ListaDTO)">
              <summary>
-             Dodaje polaznika u bazu
+             Dodaje TodoListu u bazu
              </summary>
              <remarks>
              Primjer upita:
             
-                POST api/v1/Polaznik
-                {Ime:"",Prezime:""}
+                POST api/v1/TodoLista
+                {naziv:"",Korisnik:""}
             
              </remarks>
-             <returns>Kreirani polaznik u bazi s svim podacima</returns>
+             <returns>Kreirana TodoLista u bazi s svim podacima</returns>
              <response code="200">Sve je u redu</response>
              <response code="400">Zahtjev nije valjan (BadRequest)</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="M:TodoLista.Controllers.TodoController.Put(System.Int32,TodoLista.Models.DTO.Todo_ListaDTO)">
              <summary>
-             Mijenja podatke postojećeg polaznika u bazi
+             Mijenja podatke postojeće TodoListe u bazi
              </summary>
              <remarks>
              Primjer upita:
             
-                PUT api/v1/Polaznik/1
+                PUT api/v1/TodoLista/1
             
              {
                "sifra": 0,
-               "ime": "string",
-               "prezime": "string",
-               "oib": "string",
-               "email": "string"
+               "naziv": "string",
+               "korisnik": "string",
+               
              }
             
              </remarks>
-             <param name="sifra">Šifra polaznika koji se mijenja</param>  
-             <returns>Svi poslani podaci od polaznika</returns>
+             <param name="sifra">Šifra TodoListe koja se mijenja</param>  
+             <returns>Svi poslani podaci od TodoListe</returns>
              <response code="200">Sve je u redu</response>
-             <response code="204">Nema u bazi polaznika kojeg želimo promijeniti</response>
+             <response code="204">Nema u bazi TodoListe koju želimo promijeniti</response>
              <response code="415">Nismo poslali JSON</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="M:TodoLista.Controllers.TodoController.Delete(System.Int32)">
              <summary>
-             Briše polaznika iz baze
+             Briše TodoListu iz baze
              </summary>
              <remarks>
              Primjer upita:
             
-                DELETE api/v1/Polaznik/1
+                DELETE api/v1/TodoLista/1
                 
              </remarks>
-             <param name="sifra">Šifra polaznika koji se briše</param>  
+             <param name="sifra">Šifra TodoListe koja se briše</param>  
              <returns>Odgovor da li je obrisano ili ne</returns>
              <response code="200">Sve je u redu</response>
-             <response code="204">Nema u bazi polaznika kojeg želimo obrisati</response>
+             <response code="204">Nema u bazi TodoListe kojeu želimo obrisati</response>
              <response code="415">Nismo poslali JSON</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
         <member name="T:TodoLista.Controllers.ZadatakController">
             <summary>
-            Namijenjeno za CRUD operacije na entitetom polaznik u bazi
+            Namijenjeno za CRUD operacije na entiteu zadatak u bazi
             </summary>
         </member>
         <member name="M:TodoLista.Controllers.ZadatakController.Get">
              <summary>
-             Dohvaća sve polaznike iz baze
+             Dohvaća sve zadatke iz baze
              </summary>
              <remarks>
              Primjer upita:
             
-                GET api/v1/Polaznik
+                GET api/v1/Zadatak
             
              </remarks>
              <returns>Polaznici u bazi</returns>
@@ -262,59 +258,35 @@
         </member>
         <member name="M:TodoLista.Controllers.ZadatakController.Post(TodoLista.Models.DTO.ZadatakDTO)">
              <summary>
-             Dodaje polaznika u bazu
+             Dodaje zadatak u bazu
              </summary>
              <remarks>
              Primjer upita:
             
-                POST api/v1/Polaznik
+                POST api/v1/Zadatak
                 {Ime:"",Prezime:""}
             
              </remarks>
-             <returns>Kreirani polaznik u bazi s svim podacima</returns>
+             <returns>Kreirani zadatak u bazi s svim podacima</returns>
              <response code="200">Sve je u redu</response>
              <response code="400">Zahtjev nije valjan (BadRequest)</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
-        <member name="M:TodoLista.Controllers.ZadatakController.Put(System.Int32,TodoLista.Models.Zadatak)">
-             <summary>
-             Mijenja podatke postojećeg polaznika u bazi
-             </summary>
-             <remarks>
-             Primjer upita:
-            
-                PUT api/v1/Polaznik/1
-            
-             {
-               "sifra": 0,
-               "ime": "string",
-               "prezime": "string",
-               "oib": "string",
-               "email": "string"
-             }
-            
-             </remarks>
-             <param name="sifra">Šifra polaznika koji se mijenja</param>  
-             <returns>Svi poslani podaci od polaznika</returns>
-             <response code="200">Sve je u redu</response>
-             <response code="204">Nema u bazi polaznika kojeg želimo promijeniti</response>
-             <response code="415">Nismo poslali JSON</response> 
-             <response code="503">Na azure treba dodati IP u firewall</response> 
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:TodoLista.Controllers.ZadatakController.Put(System.Int32,TodoLista.Models.Zadatak)" -->
         <member name="M:TodoLista.Controllers.ZadatakController.Delete(System.Int32)">
              <summary>
-             Briše polaznika iz baze
+             Briše zadatak iz baze
              </summary>
              <remarks>
              Primjer upita:
             
-                DELETE api/v1/Polaznik/1
+                DELETE api/v1/Zadatak/1
                 
              </remarks>
-             <param name="sifra">Šifra polaznika koji se briše</param>  
+             <param name="sifra">Šifra zadatka koji se briše</param>  
              <returns>Odgovor da li je obrisano ili ne</returns>
              <response code="200">Sve je u redu</response>
-             <response code="204">Nema u bazi polaznika kojeg želimo obrisati</response>
+             <response code="204">Nema u bazi zadatka kojeg želimo obrisati</response>
              <response code="415">Nismo poslali JSON</response> 
              <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>

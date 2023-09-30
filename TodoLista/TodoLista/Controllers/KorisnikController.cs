@@ -24,15 +24,15 @@ namespace TodoLista.Controllers
         }
 
         /// <summary>
-        /// Dohvaća sve smjerove iz baze
+        /// Dohvaća sve korisnike iz baze
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    GET api/v1/Smjer
+        ///    GET api/v1/Korisnik
         ///
         /// </remarks>
-        /// <returns>Smjerovi u bazi</returns>
+        /// <returns>Korisnik u bazi</returns>
         /// <response code="200">Sve je u redu</response>
         /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
@@ -72,16 +72,16 @@ namespace TodoLista.Controllers
 
 
         /// <summary>
-        /// Dodaje smjer u bazu
+        /// Dodaje korisnika u bazu
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    POST api/v1/Smjer
-        ///    {naziv:"",trajanje:100}
+        ///    POST api/v1/Korisnik
+        ///    {ime:"",prezime:"",korisnicko ime:"",lozinka:}
         ///
         /// </remarks>
-        /// <returns>Kreirani smjer u bazi s svim podacima</returns>
+        /// <returns>Kreirani korisnik u bazi s svim podacima</returns>
         /// <response code="200">Sve je u redu</response>
         /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
@@ -113,27 +113,27 @@ namespace TodoLista.Controllers
 
 
         /// <summary>
-        /// Mijenja podatke postojećeg smjera u bazi
+        /// Mijenja podatke postojećeg korisnika u bazi
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    PUT api/v1/smjer/1
+        ///    PUT api/v1/korisnik/1
         ///
         /// {
         ///  "sifra": 0,
-        ///  "naziv": "Novi naziv",
-        ///  "trajanje": 120,
-        ///  "cijena": 890.22,
-        ///  "upisnina": 0,
-        ///  "verificiran": true
+        ///  "ime": "",
+        ///  "prezime": "",
+        ///  "korisnicko ime": "",
+        ///  "lozinka": 0,
+        ///  
         /// }
         ///
         /// </remarks>
-        /// <param name="sifra">Šifra smjera koji se mijenja</param>  
-        /// <returns>Svi poslani podaci od smjera</returns>
+        /// <param name="sifra">Šifra korisnika koji se mijenja</param>  
+        /// <returns>Svi poslani podaci od korisnika</returns>
         /// <response code="200">Sve je u redu</response>
-        /// <response code="204">Nema u bazi smjera kojeg želimo promijeniti</response>
+        /// <response code="204">Nema u bazi korisnika kojeg želimo promijeniti</response>
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
         [HttpPut]
@@ -175,18 +175,18 @@ namespace TodoLista.Controllers
 
 
         /// <summary>
-        /// Briše smjer iz baze
+        /// Briše korisnika iz baze
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    DELETE api/v1/smjer/1
+        ///    DELETE api/v1/korisnik/1
         ///    
         /// </remarks>
-        /// <param name="sifra">Šifra smjera koji se briše</param>  
+        /// <param name="sifra">Šifra korisnika koji se briše</param>  
         /// <returns>Odgovor da li je obrisano ili ne</returns>
         /// <response code="200">Sve je u redu</response>
-        /// <response code="204">Nema u bazi smjera kojeg želimo obrisati</response>
+        /// <response code="204">Nema u bazi korisnika kojeg želimo obrisati</response>
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
         [HttpDelete]

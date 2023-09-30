@@ -3,11 +3,12 @@ using TodoLista.Models;
 using TodoLista.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TodoLista.Controllers
 {
     /// <summary>
-    /// Namijenjeno za CRUD operacije na entitetom polaznik u bazi
+    /// Namijenjeno za CRUD operacije na entiteu zadatak u bazi
     /// </summary>
     [ApiController]
     [Route("api/v1/[controller]")]
@@ -22,12 +23,12 @@ namespace TodoLista.Controllers
         }
 
         /// <summary>
-        /// Dohvaća sve polaznike iz baze
+        /// Dohvaća sve zadatke iz baze
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    GET api/v1/Polaznik
+        ///    GET api/v1/Zadatak
         ///
         /// </remarks>
         /// <returns>Polaznici u bazi</returns>
@@ -78,16 +79,16 @@ namespace TodoLista.Controllers
 
 
         /// <summary>
-        /// Dodaje polaznika u bazu
+        /// Dodaje zadatak u bazu
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    POST api/v1/Polaznik
+        ///    POST api/v1/Zadatak
         ///    {Ime:"",Prezime:""}
         ///
         /// </remarks>
-        /// <returns>Kreirani polaznik u bazi s svim podacima</returns>
+        /// <returns>Kreirani zadatak u bazi s svim podacima</returns>
         /// <response code="200">Sve je u redu</response>
         /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
@@ -129,26 +130,27 @@ namespace TodoLista.Controllers
 
 
         /// <summary>
-        /// Mijenja podatke postojećeg polaznika u bazi
+        /// Mijenja podatke postojećeg zadatka u bazi
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    PUT api/v1/Polaznik/1
+        ///    PUT api/v1/Zadatak/1
         ///
         /// {
-        ///   "sifra": 0,
-        ///   "ime": "string",
-        ///   "prezime": "string",
-        ///   "oib": "string",
-        ///   "email": "string"
+        ///   sifra,
+        ///naziv,
+	    ///datum datetime,
+        // status ,
+	    //todo_lista ,
+	    //kategorija 
         /// }
         ///
         /// </remarks>
-        /// <param name="sifra">Šifra polaznika koji se mijenja</param>  
-        /// <returns>Svi poslani podaci od polaznika</returns>
+        /// <param name="sifra">Šifra zadatka koji se mijenja</param>  
+        /// <returns>Svi poslani podaci od zadatka</returns>
         /// <response code="200">Sve je u redu</response>
-        /// <response code="204">Nema u bazi polaznika kojeg želimo promijeniti</response>
+        /// <response code="204">Nema u bazi zadatak kojeg želimo promijeniti</response>
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
         [HttpPut]
@@ -168,8 +170,7 @@ namespace TodoLista.Controllers
                 {
                     return BadRequest();
                 }
-                // inače se rade Mapper-i
-                // mi ćemo za sada ručno
+               
                 ZadatakBaza.Naziv = pdto.Naziv;
 
 
@@ -183,8 +184,7 @@ namespace TodoLista.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status503ServiceUnavailable,
-                                  ex); // kada se vrati cijela instanca ex tada na klijentu imamo više podataka o grešci
-                // nije dobro vraćati cijeli ex ali za dev je OK
+                                  ex); 
             }
 
 
@@ -193,18 +193,18 @@ namespace TodoLista.Controllers
 
 
         /// <summary>
-        /// Briše polaznika iz baze
+        /// Briše zadatak iz baze
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    DELETE api/v1/Polaznik/1
+        ///    DELETE api/v1/Zadatak/1
         ///    
         /// </remarks>
-        /// <param name="sifra">Šifra polaznika koji se briše</param>  
+        /// <param name="sifra">Šifra zadatka koji se briše</param>  
         /// <returns>Odgovor da li je obrisano ili ne</returns>
         /// <response code="200">Sve je u redu</response>
-        /// <response code="204">Nema u bazi polaznika kojeg želimo obrisati</response>
+        /// <response code="204">Nema u bazi zadatka kojeg želimo obrisati</response>
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
         [HttpDelete]

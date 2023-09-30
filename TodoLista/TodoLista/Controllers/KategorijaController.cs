@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TodoLista.Controllers
 {
     /// <summary>
-    /// Namijenjeno za CRUD operacije na entitetom smjer u bazi
+    /// Namijenjeno za CRUD operacije na entitetom kategorija u bazi
     /// </summary>
     [ApiController]
     [Route("api/v1/[controller]")]
@@ -23,15 +23,15 @@ namespace TodoLista.Controllers
         }
 
         /// <summary>
-        /// Dohvaća sve smjerove iz baze
+        /// Dohvaća sve kategorije iz baze
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    GET api/v1/Smjer
+        ///    GET api/v1/Kategorija
         ///
         /// </remarks>
-        /// <returns>Smjerovi u bazi</returns>
+        /// <returns>Kategorije u bazi</returns>
         /// <response code="200">Sve je u redu</response>
         /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
@@ -64,16 +64,16 @@ namespace TodoLista.Controllers
 
 
         /// <summary>
-        /// Dodaje smjer u bazu
+        /// Dodaje kategoriju u bazu
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    POST api/v1/Smjer
-        ///    {naziv:"",trajanje:100}
+        ///    POST api/v1/Kategorija
+        ///    {naziv:""}
         ///
         /// </remarks>
-        /// <returns>Kreirani smjer u bazi s svim podacima</returns>
+        /// <returns>Kreirana kategorija u bazi s svim podacima</returns>
         /// <response code="200">Sve je u redu</response>
         /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
@@ -105,27 +105,24 @@ namespace TodoLista.Controllers
 
 
         /// <summary>
-        /// Mijenja podatke postojećeg smjera u bazi
+        /// Mijenja podatke postojeće kategorije u bazi
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    PUT api/v1/smjer/1
+        ///    PUT api/v1/kategorija/1
         ///
         /// {
         ///  "sifra": 0,
         ///  "naziv": "Novi naziv",
-        ///  "trajanje": 120,
-        ///  "cijena": 890.22,
-        ///  "upisnina": 0,
-        ///  "verificiran": true
+        ///  
         /// }
         ///
         /// </remarks>
-        /// <param name="sifra">Šifra smjera koji se mijenja</param>  
-        /// <returns>Svi poslani podaci od smjera</returns>
+        /// <param name="sifra">Šifra kategorije koja se mijenja</param>  
+        /// <returns>Svi poslani podaci od kategorije</returns>
         /// <response code="200">Sve je u redu</response>
-        /// <response code="204">Nema u bazi smjera kojeg želimo promijeniti</response>
+        /// <response code="204">Nema u bazi kategorije koje želimo promijeniti</response>
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
         [HttpPut]
@@ -165,18 +162,18 @@ namespace TodoLista.Controllers
 
 
         /// <summary>
-        /// Briše smjer iz baze
+        /// Briše kategoriju iz baze
         /// </summary>
         /// <remarks>
         /// Primjer upita:
         ///
-        ///    DELETE api/v1/smjer/1
+        ///    DELETE api/v1/kategorija/1
         ///    
         /// </remarks>
-        /// <param name="sifra">Šifra smjera koji se briše</param>  
+        /// <param name="sifra">Šifra kategorije koji se briše</param>  
         /// <returns>Odgovor da li je obrisano ili ne</returns>
         /// <response code="200">Sve je u redu</response>
-        /// <response code="204">Nema u bazi smjera kojeg želimo obrisati</response>
+        /// <response code="204">Nema u bazi kategorije koje želimo obrisati</response>
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
         [HttpDelete]

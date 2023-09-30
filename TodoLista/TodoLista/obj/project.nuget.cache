@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5ilmB1szOMR8r0kvl1zRhBLKnbWKLusWi4UK7fMp7n7v6MLTLD69eBr3elIw1atAnvgaHnGEHCDHcJpi2TVJWQ==",
+  "dgSpecHash": "JZWEFaBToOtcYtPDhc8DbnL6Ii3zzswd3yrIvh/jgsHo6yi7cO9NAMaIZ78FaRBD5rOgXH6cHkdeb6R35vOJzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Polaznik\\Documents\\github\\EdunovaWP1\\CSHARP\\TodoLista\\TodoLista\\TodoLista.csproj",
+  "projectFilePath": "C:\\Users\\Polaznik\\Desktop\\vjezba-main\\TodoLista\\TodoLista\\TodoLista.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Polaznik\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Polaznik\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -4,7 +4,8 @@
     {
         public int Sifra { get; set; }
         public string Naziv { get; set; }
-        public string korisnik { get; set; }
-       
+        public string? korisnik{ get; set; }
+        public int sifraKorisnik { get; set; }
+
     }
 }
