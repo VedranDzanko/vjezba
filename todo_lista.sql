@@ -33,7 +33,7 @@ select * from korisnik
 insert into korisnik (ime,prezime, korisnicko_ime, lozinka) values
 ('Vedran','Džanko','dzanko87', 'granicar'),
 ('Vedrana','Lukić','VL', 'nkrask69'),
-('Toni','Perić','TL','nkjadran');
+('Toni','Perić','TP','nkjadran');
 
 insert into todo_lista (naziv,korisnik) values
 ('Izgradnja vikendice', 2),
